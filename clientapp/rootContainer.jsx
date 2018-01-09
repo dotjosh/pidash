@@ -10,7 +10,9 @@ const EVENTNAMES = {
 
 const CAMERACOUNT = 4;
 
-const io = ioClient('./')
+var url = window.location.href;
+var splitUrl = url.split("/");
+const io = ioClient(splitUrl[0] + "//" + splitUrl[2])
 
 export default class RootContainer extends React.Component {
     constructor(){
