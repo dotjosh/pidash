@@ -2,10 +2,6 @@ import React from 'react';
 import ioClient from 'socket.io-client'
 import Root from './root.jsx'
 
-const URLS = {
-    server: "http://localhost:3000"
-};
-
 const EVENTNAMES = {
     micOnChange: "micOnChange",
     disconnect: "disconnect",
@@ -14,7 +10,7 @@ const EVENTNAMES = {
 
 const CAMERACOUNT = 4;
 
-const io = ioClient(URLS.server)
+const io = ioClient('./')
 
 export default class RootContainer extends React.Component {
     constructor(){
