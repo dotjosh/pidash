@@ -10,58 +10,136 @@ body {
 }
 
 .panels {
-  display: grid;
-	position:absolute;
-	top:10px;
-	left:10px;
-	right:10px;
-	bottom:10px;
-	grid-gap: 10px;
-	grid-template-columns: repeat(10, 1fr);
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	
+	display: flex;
+	flex-wrap: nowrap;
 }
 
 	.panel {
-		background-color: rgba(141, 141, 141, 0.4);
 	}
 
-		.panel-mic {
-			text-align: center;
-			grid-column-start: 1;
-			grid-column-end: 4;
-			grid-row-start:1;
-			grid-row-end:2;
-			padding: 9vh 0 0 0;
-		}
+		.panels-left {
 
-			.panel-mic-icon {
-				color: color;
-				font-size: 30vh;
-				transition: ease-in all .1s;
+			flex: 1 1 100px;
+		}	
+
+			.panel-mic {
+				text-align: center;
+				padding: 3vh 3vw 3vh 3vw;
 			}
 
-			.panel-mic-icon-disconnected {
-				color:yellow;
-			}
+				.panel-mic-icon {
+					color: color;
+					font-size: 20vh;
+				}
 
-			.panel-mic-icon-off {
-				color:#960038;
-			}
+				.panel-mic-icon-disconnected {
+					color:yellow;
+				}
 
-			.panel-mic-icon-on {
-				color:#4c9d49;
+				.panel-mic-icon-off {
+					color:#960038;
+				}
+
+				.panel-mic-icon-on {
+					color:#4c9d49;
+				}
+
+
+			.panel-weather {
+				margin-top:5vh;
 			}
+	
+				.panel-weather-temp {
+					color:#EEE;
+					font-size:4em;
+					line-height:.9em;
+					margin:0;
+					text-align:center;
+					font-family:arial;
+				}
+				.panel-weather-temprange {
+					color:#CCC;
+					margin:0;
+					text-align:center;
+					font-family:arial;
+				}
+				.panel-weather-description {
+					color:#888;
+					margin:5px 0 0 0;
+					text-align:center;
+					font-family:arial;
+					text-transform: uppercase;
+				}		
+				.panel-weather-pic {
+					text-align:center;
+					margin-top:10px;
+					img { 
+						width:90%;
+					}
+				}	
 
 		.panel-camera {
-			grid-column-start: 4;
-			grid-column-end: 11;
-			grid-row-start:1;
-			grid-row-end:5;
+			flex: 10 1 200px;
+			flex-wrap: wrap;
+			position:relative;
+			height:100%;	
 		}
 
 			.panel-camera-singleitem {
-				width: 100%;
-				height:100%;
-				max-width:100%;
-				max-height:100%;
+				width: 98%;
+				height:98%;
 				object-fit:contain;
 			}
+
+			.panel-camera-multi {
+			
+			}
+
+				.panel-camera-item {
+					width:50%;
+					height:50%;
+					box-sizing: border-box;
+					display:inline-block;
+					background:#333;
+					border:solid 1px #666;
+					text-align:center;
+					img {
+						height:98%;
+						object-fit:contain;
+					}
+
+					&.panel-camera-item-selected {
+						width:100%;
+						height:100%;
+						position:absolute;
+						top:0;
+						left:0;
+						right:0;
+						bottom:0;
+					}
+				}
+
+	.statistic {
+		text-align: center;
+		margin-bottom: .7em;
+	}
+
+		.statistic-label {
+			font-size: 13px;
+			font-family: arial;
+			text-transform:  uppercase;
+			color: #FFF;
+		}
+
+		.statistic-text {
+			font-size: 2.5em;
+			font-family: arial;
+			color: #FFF;
+			line-height: 1em;
+		}
