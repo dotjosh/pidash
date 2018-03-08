@@ -17,7 +17,7 @@ let state = {
 const config = {
     intervals: {
         nest: MINUTE_MS * 3,
-        weather: MINUTE_MS * 1
+        weather: MINUTE_MS * 7
     },
     apikeys: {
         nest: process.env.keys_nest,
@@ -25,6 +25,10 @@ const config = {
     }
 }
 console.log(config);
+
+process.on('uncaughtException', function (err) {
+    console.log(err);
+  })
 
 configureExpress();
 
@@ -82,7 +86,7 @@ function handleWebConnect(socket){
 function createCameraRoute(i, ip){ 
     return app.get(
         `/camera/${i}`, 
-        new MjpegProxy(`http://admin:12345@192.168.1.${ip}/Streaming/channels/1/preview`).proxyRequest
+        new MjpegProxy(`http://admin:password12345@192.168.1.${ip}/Streaming/channels/1/preview`).proxyRequest
     );
 }
 
