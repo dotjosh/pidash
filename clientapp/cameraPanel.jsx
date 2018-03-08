@@ -9,8 +9,9 @@ export default class CameraPanel extends React.Component
             cacheKill: 1
         };
         this._resetTimer = window.setInterval(
-            () => this.setState({ cacheKill: this.state.cacheKill + 1}
-        ), 60000);
+            () => this.setState({ cacheKill: this.state.cacheKill + 1}), 
+            60000
+        );
     }   
 
     componentWillUnmount(){
@@ -18,7 +19,7 @@ export default class CameraPanel extends React.Component
     }
 
     render(){
-        const { onClickCamera, cameraNumber, cameraCount } = props;
+        const { onClickCamera, cameraNumber, cameraCount } = this.props;
         const { cacheKill } = this.state;
         return (
             <div className="panel panel-camera">
