@@ -8,10 +8,10 @@ export default class CameraPanel extends React.Component
         this.state = {
             cacheKill: 1
         };
-        this._resetTimer = window.setInterval(
-            () => this.setState({ cacheKill: this.state.cacheKill + 1}), 
-            60000
-        );
+        // this._resetTimer = window.setInterval(
+        //     () => this.setState({ cacheKill: this.state.cacheKill + 1}), 
+        //     1000 * 
+        // );
     }   
 
     componentWillUnmount(){
